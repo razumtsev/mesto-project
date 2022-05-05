@@ -1,0 +1,5 @@
+/* --== подключаем normalize.css ==-- */
+@import url(../vendor/normalize.css);
+
+/* --== подключаем шрифт "Inter" ==-- */
+@import url(../vendor/Inter/inter.css);
