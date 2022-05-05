@@ -3,3 +3,9 @@
 
 /* --== подключаем шрифт "Inter" ==-- */
 @import url(../vendor/Inter/inter.css);
+
+/* --== блок Root ==-- */
+@import url(../blocks/root/root.css);
+
+/* --== блок Page ==-- */
+@import url(../blocks/page/page.css);
