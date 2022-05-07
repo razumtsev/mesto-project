@@ -5,6 +5,23 @@
   background-image: url(../../../images/pen.svg);
   background-size: 10px 10px;
   position: absolute;
-  top: 15px;
-  right: -44px;
+  top: 16px;
+  right: -43px;
+}
+
+@media screen and (max-width: 800px) {
+  .button_type_edit {
+    top: 4px;
+    right: -36px;
+  }
+}
+
+@media screen and (max-width: 618px) {
+  .button_type_edit {
+    width: 18px;
+    height: 18px;
+    background-size: 7.5px 7.5px;
+    top: 8px;
+    right: -28px;
+  }
 }
