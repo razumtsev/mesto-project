@@ -28,3 +28,14 @@
 @import url(../blocks/profile/__info/profile__info.css);
 @import url(../blocks/profile/__nickname/profile__nickname.css);
 @import url(../blocks/profile/__occupation/profile__occupation.css);
+
+/* --== блок Elements ==-- */
+@import url(../blocks/elements/elements.css);
+@import url(../blocks/elements/__grid/elements__grid.css);
+@import url(../blocks/elements/__item/elements__item.css);
+
+/* --== блок Element ==-- */
+@import url(../blocks/element/element.css);
+@import url(../blocks/element/__image/element__image.css);
+@import url(../blocks/element/__caption/element__caption.css);
+@import url(../blocks/element/__button/element__button.css);
