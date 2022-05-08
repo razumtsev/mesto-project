@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<htlm lang="ru">
+<html lang="ru">
 
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,7 +12,6 @@
 
 <body class="root">
 
-  <!-- Когда будешь делать адаптив - не забудь добавить странице маржины при ширине меньше 880пикс -->
   <div class="page">
 
     <header class="header">
@@ -34,46 +33,46 @@
       <section class="elements">
         <ul class="elements__grid">
           <li>
-            <figure class="element">
+            <article class="element">
               <img class="element__image" src="./images/el-karachaevsk.jpg" alt="храм в горах">
-              <figcaption class="element__caption">Карачаевск</figcaption>
+              <h3 class="element__caption">Карачаевск</h3>
               <button class="button element__button"></button>
-            </figure>
+            </article>
           </li>
           <li>
-            <figure class="element">
+            <article class="element">
               <img class="element__image" src="./images/el-elbrus.jpg" alt="Эльбрус удаляется в закат">
-              <figcaption class="element__caption">Гора Эльбрус</figcaption>
+              <h3 class="element__caption">Гора Эльбрус</h3>
               <button class="button element__button"></button>
-            </figure>
+            </article>
           </li>
           <li>
-            <figure class="element">
+            <article class="element">
               <img class="element__image" src="./images/el-dombay.jpg" alt="сосны, горы, небо, снег">
-              <figcaption class="element__caption">Домбай</figcaption>
+              <h3 class="element__caption">Домбай</h3>
               <button class="button element__button"></button>
-            </figure>
+            </article>
           </li>
           <li>
-            <figure class="element">
+            <article class="element">
               <img class="element__image" src="./images/el-elbrus.jpg" alt="Эльбрус удаляется в закат">
-              <figcaption class="element__caption">Гора Эльбрус</figcaption>
+              <h3 class="element__caption">Гора Эльбрус</h3>
               <button class="button element__button"></button>
-            </figure>
+            </article>
           </li>
           <li>
-            <figure class="element">
+            <article class="element">
               <img class="element__image" src="./images/el-dombay.jpg" alt="сосны, горы, небо, снег">
-              <figcaption class="element__caption">Домбай</figcaption>
+              <h3 class="element__caption">Домбай</h3>
               <button class="button element__button"></button>
-            </figure>
+            </article>
           </li>
           <li>
-            <figure class="element">
+            <article class="element">
               <img class="element__image" src="./images/el-karachaevsk.jpg" alt="храм в горах">
-              <figcaption class="element__caption">Карачаево-Черкесская Республика</figcaption>
+              <h3 class="element__caption">Карачаево-Черкесская Республика</h3>
               <button class="button element__button"></button>
-            </figure>
+            </article>
           </li>
         </ul>
       </section>
@@ -84,13 +83,12 @@
 
     </main>
 
-    <!-- Обязательно проверить атрибуты тега input и form -->
     <div class="popup">
       <div class="popup__container">
         <form class="form form_type_edit-profile" name="edit-profile">
           <h2 class="form__header">Редактировать профиль</h2>
-          <input class="form__input" type="text" name="nickname" min="2" max="100" required placeholder="Имя" value="Жак-Ив Кусто">
-          <input class="form__input" type="text" name="occupation" min="2" max="100" required placeholder="Род занятий" value="Исследователь океана">
+          <input class="form__input" type="text" name="nickname" required placeholder="Имя" value="Жак-Ив Кусто">
+          <input class="form__input" type="text" name="occupation" required placeholder="Род занятий" value="Исследователь океана">
           <button class="button form__submit" type="submit">Сохранить</button>
         </form>
         <button class="button button_type_close"></button>
@@ -101,4 +99,4 @@
 
 </body>
 
-</htlm>
+</html>
