@@ -1,8 +1,11 @@
-.form__name {
+.form__header {
   font-style: normal;
   font-weight: 900;
   font-size: 24px;
   line-height: 29px;
   width: calc(100% - 72px);
   margin: 34px 0 19px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
