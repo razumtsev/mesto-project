@@ -12,6 +12,6 @@
 
 Автор с нетерпением ожидает начала JS, на котором обучение для него обычно и заканчивается :|
 
-[посмотреть](https://github.com/razumtsev/mesto-project) работу
+[посмотреть](https://razumtsev.github.io/mesto-project/) работу
 
 [связаться](mailto:razumtsev@mail.ru) со мной
