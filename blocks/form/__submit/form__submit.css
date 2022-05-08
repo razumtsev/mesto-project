@@ -11,3 +11,13 @@
   margin: 48px 0 37px;
   border-radius: 2px;
 }
+
+@media screen and (max-width: 618px) {
+  .form__submit {
+    font-size: 14px;
+    line-height: 17px;
+    width: calc(100% - 44px);
+    height: 46px;
+    margin: 45px 0 25px;
+  }
+}
