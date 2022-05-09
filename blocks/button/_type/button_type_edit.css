@@ -4,24 +4,21 @@
   border: 1px solid #fff;
   background-image: url(../../../images/pen.svg);
   background-size: 10px 10px;
-  position: absolute;
-  top: 16px;
-  right: -43px;
+  align-self: center;
+  margin: 8px 0 0 20px;
 }
 
 @media screen and (max-width: 800px) {
   .button_type_edit {
-    top: 4px;
-    right: -36px;
+    width: 18px;
+    height: 18px;
+    background-size: 7.5px 7.5px;
+    margin: 5px 0 0 15px;
   }
 }
 
 @media screen and (max-width: 618px) {
   .button_type_edit {
-    width: 18px;
-    height: 18px;
-    background-size: 7.5px 7.5px;
-    top: 8px;
-    right: -28px;
+    margin: 1px 0 0 10px;
   }
 }
