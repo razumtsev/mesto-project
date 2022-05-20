@@ -18,6 +18,14 @@ function closePopup () {
     popup.classList.remove('popup_is-open');
 }
 
+function saveData (evt) {
+    evt.preventDefault();
+    profileNickname.textContent = inputNickname.value;
+    profileOccupation.textContent =  inputOccupation.value;
+    closePopup();
+}
+
 
 editButton.addEventListener('click', openPopup);
 closeButton.addEventListener('click', closePopup);
+formEditProfile.addEventListener('submit', saveData);
