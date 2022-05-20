@@ -55,4 +55,6 @@
 @import url(../blocks/form/_type/form_type_edit-profile.css);
 @import url(../blocks/form/__header/form__header.css);
 @import url(../blocks/form/__input/form__input.css);
+@import url(../blocks/form/__input/_type/form__input_type_nickname.css);
+@import url(../blocks/form/__input/_type/form__input_type_occupation.css);
 @import url(../blocks/form/__submit/form__submit.css);
