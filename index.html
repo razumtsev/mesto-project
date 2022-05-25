@@ -32,48 +32,7 @@
 
       <section class="elements">
         <ul class="elements__grid">
-          <li>
-            <article class="element">
-              <img class="element__image" src="./images/el-karachaevsk.jpg" alt="храм в горах">
-              <h2 class="element__caption">Карачаевск</h2>
-              <button class="button element__button" type="button"></button>
-            </article>
-          </li>
-          <li>
-            <article class="element">
-              <img class="element__image" src="./images/el-elbrus.jpg" alt="Эльбрус удаляется в закат">
-              <h2 class="element__caption">Гора Эльбрус</h2>
-              <button class="button element__button" type="button"></button>
-            </article>
-          </li>
-          <li>
-            <article class="element">
-              <img class="element__image" src="./images/el-dombay.jpg" alt="сосны, горы, небо, снег">
-              <h2 class="element__caption">Домбай</h2>
-              <button class="button element__button" type="button"></button>
-            </article>
-          </li>
-          <li>
-            <article class="element">
-              <img class="element__image" src="./images/el-elbrus.jpg" alt="Эльбрус удаляется в закат">
-              <h2 class="element__caption">Гора Эльбрус</h2>
-              <button class="button element__button" type="button"></button>
-            </article>
-          </li>
-          <li>
-            <article class="element">
-              <img class="element__image" src="./images/el-dombay.jpg" alt="сосны, горы, небо, снег">
-              <h2 class="element__caption">Домбай</h2>
-              <button class="button element__button" type="button"></button>
-            </article>
-          </li>
-          <li>
-            <article class="element">
-              <img class="element__image" src="./images/el-karachaevsk.jpg" alt="храм в горах">
-              <h2 class="element__caption">Карачаево-Черкесская Республика</h2>
-              <button class="button element__button" type="button"></button>
-            </article>
-          </li>
+          <!-- элементы списка добавляет функция renderCard -->
         </ul>
       </section>
 
@@ -94,6 +53,16 @@
         <button class="button button_type_close" type="button" aria-label="закрыть модальное окно"></button>
       </div>
     </div>
+
+    <template id="card-template">
+      <li class="elements__item">
+        <article class="element">
+          <img class="element__image" src="" alt="">
+          <h2 class="element__caption"></h2>
+          <button class="button element__button" type="button"></button>
+        </article>
+      </li>
+    </template>
 
   </div>
 
