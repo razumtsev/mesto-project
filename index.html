@@ -42,12 +42,24 @@
 
     </main>
 
-    <div class="popup">
+    <div class="popup popup_type_edit-profile">
       <div class="popup__container">
         <form class="form form_type_edit-profile" name="edit-profile">
           <h2 class="form__header">Редактировать профиль</h2>
           <input class="form__input form__input_type_nickname" type="text" name="nickname" required placeholder="Имя" value="">
           <input class="form__input form__input_type_occupation" type="text" name="occupation" required placeholder="Род занятий" value="">
+          <button class="button form__submit" type="submit">Сохранить</button>
+        </form>
+        <button class="button button_type_close" type="button" aria-label="закрыть модальное окно"></button>
+      </div>
+    </div>
+
+    <div class="popup popup_type_add-card">
+      <div class="popup__container">
+        <form class="form form_type_add-card" name="add-card">
+          <h2 class="form__header">Новое место</h2>
+          <input class="form__input form__input_type_card-name" type="text" name="card-name" required placeholder="Название" value="">
+          <input class="form__input form__input_type_image-link" type="url" name="image-link" required placeholder="Ссылка на картинку" value="">
           <button class="button form__submit" type="submit">Сохранить</button>
         </form>
         <button class="button button_type_close" type="button" aria-label="закрыть модальное окно"></button>

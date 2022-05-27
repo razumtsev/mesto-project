@@ -49,13 +49,18 @@
 /* --== блок Popup ==-- */
 @import url(../blocks/popup/popup.css);
 @import url(../blocks/popup/_is-open/popup_is-open.css);
+@import url(../blocks/popup/_type/popup_type_edit-profile.css);
+@import url(../blocks/popup/_type/popup_type_add-card.css);
 @import url(../blocks/popup/__container/popup__container.css);
 
 /* --== блок Form ==-- */
 @import url(../blocks/form/form.css);
 @import url(../blocks/form/_type/form_type_edit-profile.css);
+@import url(../blocks/form/_type/form_type_add-card.css);
 @import url(../blocks/form/__header/form__header.css);
 @import url(../blocks/form/__input/form__input.css);
 @import url(../blocks/form/__input/_type/form__input_type_nickname.css);
 @import url(../blocks/form/__input/_type/form__input_type_occupation.css);
+@import url(../blocks/form/__input/_type/form__input_type_card-name.css);
+@import url(../blocks/form/__input/_type/form__inpue_type_image-link.css);
 @import url(../blocks/form/__submit/form__submit.css);
