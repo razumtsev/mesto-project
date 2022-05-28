@@ -39,8 +39,9 @@
 @import url(../blocks/element/element.css);
 @import url(../blocks/element/__image/element__image.css);
 @import url(../blocks/element/__caption/element__caption.css);
-@import url(../blocks/element/__button/element__button.css);
-@import url(../blocks/element/__button/_is-active/element__button_is-active.css);
+@import url(../blocks/element/__like/element__like.css);
+@import url(../blocks/element/__like/_is-active/element__like_is-active.css);
+@import url(../blocks/element/__remove/element__remove.css);
 
 /* --== блок Footer ==-- */
 @import url(../blocks/footer/footer.css);

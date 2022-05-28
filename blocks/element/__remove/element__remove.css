@@ -1,0 +1,9 @@
+.element__remove {
+  width: 18px;
+  height: 19px;
+  background-image: url(../../../images/trashcan.svg);
+  margin: 0;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}

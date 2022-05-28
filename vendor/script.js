@@ -52,6 +52,12 @@ function buildCard (name, link) {
   card.querySelector('.element__image').src = link;
   card.querySelector('.element__image').alt = name;
   card.querySelector('.element__caption').textContent = name;
+
+  const cardRemoveButton = card.querySelector('.element__remove');
+  cardRemoveButton.addEventListener('click', function () {
+    cardRemoveButton.closest('.elements__item').remove();
+  });
+
   renderCard(card);
 }
 
@@ -99,6 +105,7 @@ const closeButtonsArr = Array.from(closeButtons);
 closeButtonsArr.forEach((button) => {
   button.addEventListener('click', closePopup);
 });
+
 
 editProfileButton.addEventListener('click', openEditProfile);
 addCardButton.addEventListener('click', openAddCard);
