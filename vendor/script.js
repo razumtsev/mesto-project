@@ -1,3 +1,4 @@
+/* массив для первоначальной загрузки карточек на страницу */
 const initialCards = [
   {
     name: 'Архыз',
@@ -25,7 +26,7 @@ const initialCards = [
   }
 ];
 
-const popup = document.querySelector('.popup');
+/* объявление глобальных переменных */
 const popupEditProfile = document.querySelector('.popup_type_edit-profile');
 const popupAddCard = document.querySelector('.popup_type_add-card');
 const popupFullsizeImage = document.querySelector('.popup_type_fullsize-image');
@@ -83,13 +84,14 @@ function buildCard (name, link) {
 }
 
 /* обработка массива карточек при первоначальной загрузке страницы */
-function arrHandler (arr) {
+function processArray (arr) {
   arr.forEach((element) => {
     buildCard(element.name, element.link);
   });
 }
 
-arrHandler (initialCards);
+/* вызов функции-обработчика массива */
+processArray (initialCards);
 
 /* открытие модального окна */
 function openPopup (popupName) {
@@ -131,9 +133,7 @@ function saveCard (evt) {
 }
 
 /* обработка кликов по кнопкам закрытия модальных окон */
-const closeButtonsArr = Array.from(closeButtons);
-
-closeButtonsArr.forEach((button) => {
+Array.from(closeButtons).forEach((button) => {
   button.addEventListener('click', closePopup);
 });
 
