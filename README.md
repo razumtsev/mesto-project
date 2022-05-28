@@ -16,4 +16,5 @@
 * отмена стандартной обработки формы - event.preventDefault();
 
 посмотреть работу: [https://razumtsev.github.io/mesto-project/]
+
 [связаться](mailto:razumtsev@mail.ru) с автором
