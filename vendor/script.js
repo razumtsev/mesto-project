@@ -53,6 +53,13 @@ function buildCard (name, link) {
   card.querySelector('.element__image').alt = name;
   card.querySelector('.element__caption').textContent = name;
 
+  /* функциональность кнопки "Лайк" */
+  const likeButton = card.querySelector('.element__like');
+  likeButton.addEventListener('click', function (evt) {
+    evt.target.classList.toggle('element__like_is-active');
+  });
+
+  /* функциональность кнопки "Удаление карточки" */
   const cardRemoveButton = card.querySelector('.element__remove');
   cardRemoveButton.addEventListener('click', function () {
     cardRemoveButton.closest('.elements__item').remove();
