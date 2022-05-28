@@ -91,10 +91,12 @@ function arrHandler (arr) {
 
 arrHandler (initialCards);
 
+/* открытие модального окна */
 function openPopup (popupName) {
   popupName.classList.add('popup_is-open');
 }
 
+/* закрытие модального окна */
 function closePopup () {
   document.querySelector('.popup_is-open').classList.remove('popup_is-open');
 }
