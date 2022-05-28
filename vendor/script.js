@@ -97,6 +97,8 @@ function openAddCard () {
 function saveCard (evt) {
   evt.preventDefault();
   buildCard(inputCardName.value, inputImageLink.value);
+  inputCardName.value = '';
+  inputImageLink.value = '';
   closePopup();
 }
 
