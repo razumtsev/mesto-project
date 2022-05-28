@@ -28,6 +28,7 @@ const initialCards = [
 const popup = document.querySelector('.popup');
 const popupEditProfile = document.querySelector('.popup_type_edit-profile');
 const popupAddCard = document.querySelector('.popup_type_add-card');
+const popupFullsizeImage = document.querySelector('.popup_type_fullsize-image');
 const editProfileButton = document.querySelector('.button_type_edit');
 const addCardButton = document.querySelector('.button_type_add');
 const closeButtons = document.querySelectorAll('.button_type_close');
@@ -39,19 +40,32 @@ const inputOccupation = document.querySelector('.form__input_type_occupation');
 const formAddCard = document.querySelector('.form_type_add-card');
 const inputCardName = document.querySelector('.form__input_type_card-name');
 const inputImageLink = document.querySelector('.form__input_type_image-link');
+const fullscreenPictureImage = document.querySelector('.fullscreen-picture__image');
+const fullscreenPictureCaption = document.querySelector('.fullscreen-picture__caption');
 
 const elementsGrid = document.querySelector('.elements__grid');
 const cardTemplate = document.querySelector('#card-template').content;
 
+/* добавление карточки в elements_grid */
 function renderCard (card) {
   elementsGrid.prepend(card);
 }
 
+/* сборка карточки */
 function buildCard (name, link) {
   const card = cardTemplate.querySelector('.elements__item').cloneNode(true);
   card.querySelector('.element__image').src = link;
   card.querySelector('.element__image').alt = name;
   card.querySelector('.element__caption').textContent = name;
+
+  /* открытие полноразмерной картинки */
+  const fullsizeImage = card.querySelector('.element__image');
+  fullsizeImage.addEventListener('click', function () {
+    fullscreenPictureImage.src = link;
+    fullscreenPictureImage.alt = name;
+    fullscreenPictureCaption.textContent = name;
+    openPopup(popupFullsizeImage);
+  });
 
   /* функциональность кнопки "Лайк" */
   const likeButton = card.querySelector('.element__like');
@@ -68,6 +82,7 @@ function buildCard (name, link) {
   renderCard(card);
 }
 
+/* обработка массива карточек при первоначальной загрузке страницы */
 function arrHandler (arr) {
   arr.forEach((element) => {
     buildCard(element.name, element.link);
@@ -84,12 +99,14 @@ function closePopup () {
   document.querySelector('.popup_is-open').classList.remove('popup_is-open');
 }
 
+/* вызов открытия окна редактирования профиля */
 function openEditProfile () {
   inputNickname.value = profileNickname.textContent;
   inputOccupation.value = profileOccupation.textContent;
   openPopup(popupEditProfile);
 }
 
+/* сохранение данных из окна редактирования профиля */
 function saveProfile (evt) {
   evt.preventDefault();
   profileNickname.textContent = inputNickname.value;
@@ -97,10 +114,12 @@ function saveProfile (evt) {
   closePopup();
 }
 
+/* вызов открытия окна добавления карточки */
 function openAddCard () {
   openPopup(popupAddCard);
 }
 
+/* добавление карточки на страницу */
 function saveCard (evt) {
   evt.preventDefault();
   buildCard(inputCardName.value, inputImageLink.value);
@@ -109,13 +128,14 @@ function saveCard (evt) {
   closePopup();
 }
 
+/* обработка кликов по кнопкам закрытия модальных окон */
 const closeButtonsArr = Array.from(closeButtons);
 
 closeButtonsArr.forEach((button) => {
   button.addEventListener('click', closePopup);
 });
 
-
+/* слушатели событий на странице */
 editProfileButton.addEventListener('click', openEditProfile);
 addCardButton.addEventListener('click', openAddCard);
 formEditProfile.addEventListener('submit', saveProfile);

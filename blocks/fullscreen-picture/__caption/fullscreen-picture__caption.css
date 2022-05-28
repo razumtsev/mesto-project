@@ -1,0 +1,9 @@
+.fullscreen-picture__caption {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15px;
+  position: absolute;
+  left: 0;
+  bottom: -25px;
+}

@@ -52,6 +52,7 @@
 @import url(../blocks/popup/_is-open/popup_is-open.css);
 @import url(../blocks/popup/_type/popup_type_edit-profile.css);
 @import url(../blocks/popup/_type/popup_type_add-card.css);
+@import url(../blocks/popup/_type/popup_type_fullsize-image.css);
 @import url(../blocks/popup/__container/popup__container.css);
 
 /* --== блок Form ==-- */
@@ -65,3 +66,8 @@
 @import url(../blocks/form/__input/_type/form__input_type_card-name.css);
 @import url(../blocks/form/__input/_type/form__inpue_type_image-link.css);
 @import url(../blocks/form/__submit/form__submit.css);
+
+/* --== блок Fullscreen-picture ==-- */
+@import url(../blocks/fullscreen-picture/fullscreen-picture.css);
+@import url(../blocks/fullscreen-picture/__image/fullscreen-picture__image.css);
+@import url(../blocks/fullscreen-picture/__caption/fullscreen-picture__caption.css);
