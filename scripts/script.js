@@ -25,18 +25,18 @@ function renderCard (card) {
 }
 
 /* сборка карточки */
-function buildCard (name, link) {
+function buildCard (cardEssence) {
   const card = cardTemplate.querySelector('.elements__item').cloneNode(true);
-  card.querySelector('.element__image').src = link;
-  card.querySelector('.element__image').alt = name;
-  card.querySelector('.element__caption').textContent = name;
+  card.querySelector('.element__image').src = cardEssence.link;
+  card.querySelector('.element__image').alt = cardEssence.name;
+  card.querySelector('.element__caption').textContent = cardEssence.name;
 
   /* открытие полноразмерной картинки */
   const fullsizeImage = card.querySelector('.element__image');
   fullsizeImage.addEventListener('click', function () {
-    fullscreenPictureImage.src = link;
-    fullscreenPictureImage.alt = name;
-    fullscreenPictureCaption.textContent = name;
+    fullscreenPictureImage.src = cardEssence.link;
+    fullscreenPictureImage.alt = cardEssence.name;
+    fullscreenPictureCaption.textContent = cardEssence.name;
     openPopup(popupFullsizeImage);
   });
 
@@ -58,7 +58,7 @@ function buildCard (name, link) {
 /* обработка массива карточек при первоначальной загрузке страницы */
 function processArray (arr) {
   arr.forEach((element) => {
-    buildCard(element.name, element.link);
+    buildCard(element);
   });
 }
 
@@ -98,9 +98,11 @@ function openAddCard () {
 /* добавление карточки на страницу */
 function saveCard (evt) {
   evt.preventDefault();
-  buildCard(inputCardName.value, inputImageLink.value);
-  inputCardName.value = '';
-  inputImageLink.value = '';
+  const objForTransfer = {};
+  objForTransfer.name = inputCardName.value;
+  objForTransfer.link = inputImageLink.value;
+  buildCard(objForTransfer);
+  formAddCard.reset();
   closePopup();
 }
 
