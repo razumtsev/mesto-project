@@ -2,9 +2,9 @@
 const popupEditProfile = document.querySelector('.popup_type_edit-profile');
 const popupAddCard = document.querySelector('.popup_type_add-card');
 const popupFullsizeImage = document.querySelector('.popup_type_fullsize-image');
-const editProfileButton = document.querySelector('.button_type_edit');
-const addCardButton = document.querySelector('.button_type_add');
-const closeButtons = document.querySelectorAll('.button_type_close');
+const buttonEditProfile = document.querySelector('.button_type_edit');
+const buttonAddCard = document.querySelector('.button_type_add');
+const buttonsClose = document.querySelectorAll('.button_type_close');
 const profileNickname = document.querySelector('.profile__nickname');
 const profileOccupation = document.querySelector('.profile__occupation');
 const formEditProfile = document.querySelector('.form_type_edit-profile');
@@ -105,12 +105,12 @@ function saveCard (evt) {
 }
 
 /* обработка кликов по кнопкам закрытия модальных окон */
-Array.from(closeButtons).forEach((button) => {
+Array.from(buttonsClose).forEach((button) => {
   button.addEventListener('click', closePopup);
 });
 
 /* слушатели событий на странице */
-editProfileButton.addEventListener('click', openEditProfile);
-addCardButton.addEventListener('click', openAddCard);
+buttonEditProfile.addEventListener('click', openEditProfile);
+buttonAddCard.addEventListener('click', openAddCard);
 formEditProfile.addEventListener('submit', saveProfile);
 formAddCard.addEventListener('submit', saveCard);
