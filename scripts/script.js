@@ -20,7 +20,8 @@ const elementsGrid = document.querySelector('.elements__grid');
 const cardTemplate = document.querySelector('#card-template').content;
 
 /* добавление карточки в elements_grid */
-function renderCard (card) {
+function renderCard (element) {
+  const card = buildCard(element);
   elementsGrid.prepend(card);
 }
 
@@ -54,13 +55,13 @@ function buildCard (cardEssence) {
     cardRemoveButton.closest('.elements__item').remove();
   });
 
-  renderCard(card);
+  return card;
 }
 
 /* обработка массива карточек при первоначальной загрузке страницы */
 function processArray (arr) {
   arr.forEach((element) => {
-    buildCard(element);
+    renderCard(element);
   });
 }
 
@@ -103,7 +104,7 @@ function saveCard (evt) {
   const objForTransfer = {};
   objForTransfer.name = inputCardName.value;
   objForTransfer.link = inputImageLink.value;
-  buildCard(objForTransfer);
+  renderCard(objForTransfer);
   formAddCard.reset();
   closePopup();
 }
