@@ -1,10 +1,10 @@
 /* объявление глобальных переменных */
+const popupList = document.querySelectorAll('.popup');
 const popupEditProfile = document.querySelector('.popup_type_edit-profile');
 const popupAddCard = document.querySelector('.popup_type_add-card');
 const popupFullsizeImage = document.querySelector('.popup_type_fullsize-image');
 const buttonEditProfile = document.querySelector('.button_type_edit');
 const buttonAddCard = document.querySelector('.button_type_add');
-const buttonsClose = document.querySelectorAll('.button_type_close');
 const profileNickname = document.querySelector('.profile__nickname');
 const profileOccupation = document.querySelector('.profile__occupation');
 const formEditProfile = popupEditProfile.querySelector('.form_type_edit-profile');
@@ -74,8 +74,8 @@ function openPopup (popupName) {
 }
 
 /* закрытие модального окна */
-function closePopup () {
-  document.querySelector('.popup_is-open').classList.remove('popup_is-open');
+function closePopup(popupName) {
+  popupName.classList.remove('popup_is-open');
 }
 
 /* вызов открытия окна редактирования профиля */
@@ -90,7 +90,7 @@ function saveProfile (evt) {
   evt.preventDefault();
   profileNickname.textContent = inputNickname.value;
   profileOccupation.textContent = inputOccupation.value;
-  closePopup();
+  closePopup(popupEditProfile);
 }
 
 /* вызов открытия окна добавления карточки */
@@ -106,16 +106,16 @@ function saveCard (evt) {
   objForTransfer.link = inputImageLink.value;
   renderCard(objForTransfer);
   formAddCard.reset();
-  closePopup();
+  closePopup(popupAddCard);
 }
-
-/* обработка кликов по кнопкам закрытия модальных окон */
-Array.from(buttonsClose).forEach((button) => {
-  button.addEventListener('click', closePopup);
-});
 
 /* слушатели событий на странице */
 buttonEditProfile.addEventListener('click', openEditProfile);
 buttonAddCard.addEventListener('click', openAddCard);
 formEditProfile.addEventListener('submit', saveProfile);
 formAddCard.addEventListener('submit', saveCard);
+
+/* поиск кнопок закрытия во всех попапах и добавление им слушателя клика */
+popupList.forEach(item => {
+  item.querySelector('.button_type_close').addEventListener('click', () => closePopup(item));
+});
