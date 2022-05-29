@@ -27,9 +27,11 @@ function renderCard (card) {
 /* сборка карточки */
 function buildCard (cardEssence) {
   const card = cardTemplate.querySelector('.elements__item').cloneNode(true);
-  card.querySelector('.element__image').src = cardEssence.link;
-  card.querySelector('.element__image').alt = cardEssence.name;
-  card.querySelector('.element__caption').textContent = cardEssence.name;
+  const elementImage = card.querySelector('.element__image');
+  const elementCaption = card.querySelector('.element__caption');
+  elementImage.src = cardEssence.link;
+  elementImage.alt = cardEssence.name;
+  elementCaption.textContent = cardEssence.name;
 
   /* открытие полноразмерной картинки */
   const fullsizeImage = card.querySelector('.element__image');
