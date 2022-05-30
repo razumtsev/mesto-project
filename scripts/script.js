@@ -25,6 +25,19 @@ function renderCard (element) {
   elementsGrid.prepend(card);
 }
 
+/* обработка клика по карточке - открытие полноразмерной картинки */
+function handleCardClick (cardEssence) {
+  fullscreenPictureImage.src = cardEssence.link;
+  fullscreenPictureImage.alt = cardEssence.name;
+  fullscreenPictureCaption.textContent = cardEssence.name;
+  openPopup(popupFullsizeImage);
+}
+
+/* обработка клика по кнопке "лайк" */
+function handleLikeClick(likeButton) {
+  likeButton.classList.toggle('element__like_is-active');
+}
+
 /* сборка карточки */
 function buildCard (cardEssence) {
   const card = cardTemplate.querySelector('.elements__item').cloneNode(true);
@@ -34,20 +47,12 @@ function buildCard (cardEssence) {
   elementImage.alt = cardEssence.name;
   elementCaption.textContent = cardEssence.name;
 
-  /* открытие полноразмерной картинки */
-  const fullsizeImage = card.querySelector('.element__image');
-  fullsizeImage.addEventListener('click', function () {
-    fullscreenPictureImage.src = cardEssence.link;
-    fullscreenPictureImage.alt = cardEssence.name;
-    fullscreenPictureCaption.textContent = cardEssence.name;
-    openPopup(popupFullsizeImage);
-  });
+  /* вызов обработчика клика по карточке */
+  elementImage.addEventListener('click', () => handleCardClick(cardEssence));
 
-  /* функциональность кнопки "Лайк" */
+  /* вызов обработчика кнопки "Лайк" */
   const likeButton = card.querySelector('.element__like');
-  likeButton.addEventListener('click', function (evt) {
-    evt.target.classList.toggle('element__like_is-active');
-  });
+  likeButton.addEventListener('click', () => handleLikeClick(likeButton));
 
   /* функциональность кнопки "Удаление карточки" */
   const cardRemoveButton = card.querySelector('.element__remove');
@@ -105,8 +110,8 @@ function saveCard (evt) {
   objForTransfer.name = inputCardName.value;
   objForTransfer.link = inputImageLink.value;
   renderCard(objForTransfer);
-  formAddCard.reset();
   closePopup(popupAddCard);
+  formAddCard.reset();
 }
 
 /* слушатели событий на странице */
